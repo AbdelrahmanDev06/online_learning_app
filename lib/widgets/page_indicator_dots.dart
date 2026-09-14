@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_learning_app/core/theme/app_colors.dart';
 
 class PageIndicatorDots extends StatelessWidget {
   final int pageCount;
@@ -22,7 +23,9 @@ class PageIndicatorDots extends StatelessWidget {
           width: isActive ? 22 : 8,
           height: 8,
           decoration: BoxDecoration(
-            color: isActive ? Colors.deepPurpleAccent : Colors.white24,
+            color: isActive
+                ? AppColors.secondary
+                : AppColors.secondary.withOpacity(0.5),
             borderRadius: BorderRadius.circular(4),
           ),
         );

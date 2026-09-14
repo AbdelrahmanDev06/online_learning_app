@@ -22,7 +22,7 @@ class OnboardingPageView extends StatelessWidget {
               ),
               clipBehavior: Clip.antiAlias,
               child: Image.asset(
-                data.illustrationAsset,
+                'assets/images/first.png',
                 fit: BoxFit.contain,
               ),
             ),

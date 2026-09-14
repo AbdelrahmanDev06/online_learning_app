@@ -87,7 +87,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: const Text(
                       'Skip',
                       style: TextStyle(
-                        color: AppColors.textMutedLight,
+                        color: AppColors.textPrimaryLight,
                         fontSize: 14,
                       ),
                     ),
@@ -128,12 +128,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       child: ElevatedButton(
         onPressed: _goToNextPage,
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.accent,
+          backgroundColor: AppColors.secondary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(14),
           ),
         ),
-        child: const Text('Next'),
+        child: const Text(
+          'Next',
+          style: TextStyle(
+            color: AppColors.textPrimaryLight,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }
@@ -147,12 +153,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: ElevatedButton(
               onPressed: widget.onSignUp ?? widget.onFinished,
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.accent,
+                backgroundColor: AppColors.secondary,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14),
                 ),
               ),
-              child: const Text('Sign up'),
+              child: const Text(
+                'Sign up',
+                style: TextStyle(color: AppColors.textPrimaryLight),
+              ),
             ),
           ),
         ),
@@ -163,7 +172,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: OutlinedButton(
               onPressed: widget.onLogIn ?? widget.onFinished,
               style: OutlinedButton.styleFrom(
-                side: const BorderSide(color: AppColors.dividerLight),
+                side: const BorderSide(color: AppColors.textPrimaryLight),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14),
                 ),

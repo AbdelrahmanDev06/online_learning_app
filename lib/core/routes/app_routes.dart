@@ -5,10 +5,9 @@ import '../../screens/bottom_nav_bar_screen.dart';
 import '../../screens/auth/login_screen.dart';
 import '../../screens/auth/signup_screen.dart';
 import '../../screens/auth/phone_entry_screen.dart';
+import '../../screens/course_screen.dart';
+import '../../screens/search_screen.dart';
 
-/// Central place for route names + route generation.
-/// Add a new screen: 1) give it a name below, 2) add a case in
-/// [generateRoute], 3) navigate with Navigator.pushNamed(context, name).
 class AppRoutes {
   AppRoutes._();
 
@@ -18,6 +17,8 @@ class AppRoutes {
   static const String signup = '/signup';
   static const String phoneEntry = '/phone-entry';
   static const String main = '/main';
+  static const String course = '/course';
+  static const String search = '/search';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -44,6 +45,12 @@ class AppRoutes {
 
       case main:
         return MaterialPageRoute(builder: (_) => const BottomNavBarScreen());
+
+      case course:
+        return MaterialPageRoute(builder: (_) => const CourseScreen());
+
+      case search:
+        return MaterialPageRoute(builder: (_) => const SearchScreen());
 
       default:
         return MaterialPageRoute(
