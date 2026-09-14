@@ -20,8 +20,10 @@ class OnboardingPageView extends StatelessWidget {
                 color: Colors.white10,
                 borderRadius: BorderRadius.circular(24),
               ),
-              child: const Center(
-                child: Icon(Icons.school, color: Colors.white54, size: 64),
+              clipBehavior: Clip.antiAlias,
+              child: Image.asset(
+                data.illustrationAsset,
+                fit: BoxFit.contain,
               ),
             ),
           ),
