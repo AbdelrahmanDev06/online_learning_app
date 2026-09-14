@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import '../core/theme/app_colors.dart';
 
-/// Bottom nav bar with 4 regular tabs and a raised circular
-/// Search button floating above the bar (matches the design).
 class CustomBottomNavBar extends StatelessWidget {
   final int currentIndex;
   final ValueChanged<int>? onTap;
@@ -32,10 +31,10 @@ class CustomBottomNavBar extends StatelessWidget {
             child: Container(
               height: 64,
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: AppColors.primary,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black12,
+                    color: AppColors.navShadow,
                     blurRadius: 12,
                     offset: Offset(0, -2),
                   ),
@@ -61,7 +60,7 @@ class CustomBottomNavBar extends StatelessWidget {
                 width: 56,
                 height: 56,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1E1B33),
+                  color: AppColors.primary,
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
@@ -71,7 +70,11 @@ class CustomBottomNavBar extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: const Icon(Icons.search, color: Colors.white, size: 26),
+                child: const Icon(
+                  Icons.search,
+                  color: AppColors.textPrimaryLight,
+                  size: 26,
+                ),
               ),
             ),
           ),
@@ -82,7 +85,9 @@ class CustomBottomNavBar extends StatelessWidget {
 
   Widget _buildItem(_NavItemData item) {
     final bool isSelected = currentIndex == item.index;
-    final Color color = isSelected ? Colors.deepPurple : Colors.grey;
+    final Color color = isSelected
+        ? AppColors.secondary
+        : AppColors.navUnselected;
 
     return InkWell(
       onTap: () => onTap?.call(item.index),

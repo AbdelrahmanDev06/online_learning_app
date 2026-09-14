@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_learning_app/screens/auth/verfiy_phone_screen.dart';
+import '../../core/theme/app_colors.dart';
 import '../../widgets/numeric_keypad.dart';
 import '../../widgets/phone_number_field.dart';
 
@@ -39,7 +40,7 @@ class _PhoneEntryScreenState extends State<PhoneEntryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1B33),
+      backgroundColor: AppColors.primary,
       body: SafeArea(
         child: Column(
           children: [
@@ -48,13 +49,16 @@ class _PhoneEntryScreenState extends State<PhoneEntryScreen> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.arrow_back, color: Colors.white),
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: AppColors.textPrimaryLight,
+                    ),
                     onPressed: () => Navigator.of(context).pop(),
                   ),
                   const Text(
                     'Continue with Phone',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColors.textPrimaryLight,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),
@@ -63,17 +67,16 @@ class _PhoneEntryScreenState extends State<PhoneEntryScreen> {
               ),
             ),
             const SizedBox(height: 12),
-
             Container(
               width: 140,
               height: 140,
               decoration: BoxDecoration(
-                color: Colors.white10,
+                color: AppColors.placeholderSurface,
                 shape: BoxShape.circle,
               ),
               child: const Icon(
                 Icons.phone_iphone,
-                color: Colors.white38,
+                color: AppColors.textFaintLight,
                 size: 56,
               ),
             ),
@@ -82,7 +85,7 @@ class _PhoneEntryScreenState extends State<PhoneEntryScreen> {
               width: double.infinity,
               padding: const EdgeInsets.fromLTRB(20, 24, 20, 32),
               decoration: const BoxDecoration(
-                color: Color(0xFF17142A),
+                color: AppColors.darkSurfaceAlt,
                 borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
               ),
               child: Column(
@@ -90,7 +93,10 @@ class _PhoneEntryScreenState extends State<PhoneEntryScreen> {
                 children: [
                   const Text(
                     'Enter Your Phone Number',
-                    style: TextStyle(color: Colors.white54, fontSize: 12),
+                    style: TextStyle(
+                      color: AppColors.textMutedLight,
+                      fontSize: 12,
+                    ),
                   ),
                   const SizedBox(height: 10),
                   PhoneNumberField(

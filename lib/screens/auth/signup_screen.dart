@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/routes/app_routes.dart';
+import '../../core/theme/app_colors.dart';
 import '../../widgets/auth_text_field.dart';
 import '../../widgets/auth_primary_button.dart';
 
@@ -41,7 +42,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1B33),
+      backgroundColor: AppColors.primary,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -53,7 +54,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const Text(
                   'Sign Up',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColors.textPrimaryLight,
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
                   ),
@@ -61,7 +62,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(height: 6),
                 const Text(
                   'Enter your details below & free sign up',
-                  style: TextStyle(color: Colors.white54, fontSize: 13),
+                  style: TextStyle(
+                    color: AppColors.textMutedLight,
+                    fontSize: 13,
+                  ),
                 ),
                 const SizedBox(height: 32),
                 AuthTextField(
@@ -95,7 +99,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   children: [
                     Checkbox(
                       value: _agreedToTerms,
-                      activeColor: const Color(0xFF3B6FF6),
+                      activeColor: AppColors.secondary,
                       onChanged: (value) =>
                           setState(() => _agreedToTerms = value ?? false),
                     ),
@@ -105,7 +109,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         child: Text(
                           'By creating an account you have to agree\nwith our term & condition.',
                           style: TextStyle(
-                            color: Colors.white38,
+                            color: AppColors.textFaintLight,
                             fontSize: 11.5,
                             height: 1.4,
                           ),
@@ -125,7 +129,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   children: [
                     const Text(
                       'already have an account? ',
-                      style: TextStyle(color: Colors.white54, fontSize: 13),
+                      style: TextStyle(
+                        color: AppColors.textMutedLight,
+                        fontSize: 13,
+                      ),
                     ),
                     GestureDetector(
                       onTap: () =>
@@ -133,7 +140,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: const Text(
                         'Log in',
                         style: TextStyle(
-                          color: Color(0xFF3B6FF6),
+                          color: AppColors.secondary,
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
                         ),

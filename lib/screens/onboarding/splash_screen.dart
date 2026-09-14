@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../core/routes/app_routes.dart';
+import '../../core/theme/app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,18 +24,17 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1B33),
+      backgroundColor: AppColors.primary,
       body: Center(
-        // TODO: replace with the real app logo once the team has it.
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.school, color: Colors.deepPurpleAccent, size: 72),
+            Icon(Icons.school, color: AppColors.accent, size: 72),
             SizedBox(height: 16),
             Text(
               'Online Learning',
               style: TextStyle(
-                color: Colors.white,
+                color: AppColors.textPrimaryLight,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),

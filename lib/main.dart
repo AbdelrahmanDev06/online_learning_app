@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'core/routes/app_routes.dart';
+import 'core/theme/app_colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: AppColors.primary,
       ),
       initialRoute: AppRoutes.splash,
       onGenerateRoute: AppRoutes.generateRoute,

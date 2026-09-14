@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/routes/app_routes.dart';
+import '../../core/theme/app_colors.dart';
 import '../../widgets/auth_text_field.dart';
 import '../../widgets/auth_primary_button.dart';
 import '../../widgets/social_auth_row.dart';
@@ -35,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1B33),
+      backgroundColor: AppColors.primary,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -47,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const Text(
                   'Log In',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColors.textPrimaryLight,
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
                   ),
@@ -83,7 +84,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {},
                     child: const Text(
                       'Forgot password?',
-                      style: TextStyle(color: Colors.white54, fontSize: 12),
+                      style: TextStyle(
+                        color: AppColors.textMutedLight,
+                        fontSize: 12,
+                      ),
                     ),
                   ),
                 ),
@@ -94,8 +98,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "Get i have don't account? ",
-                      style: TextStyle(color: Colors.white54, fontSize: 13),
+                      "Don't have an account? ",
+                      style: TextStyle(
+                        color: AppColors.textMutedLight,
+                        fontSize: 13,
+                      ),
                     ),
                     GestureDetector(
                       onTap: () =>
@@ -103,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: const Text(
                         'Sign-up',
                         style: TextStyle(
-                          color: Color(0xFF3B6FF6),
+                          color: AppColors.secondary,
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
                         ),
@@ -115,7 +122,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 const Center(
                   child: Text(
                     'Or login with',
-                    style: TextStyle(color: Colors.white38, fontSize: 12),
+                    style: TextStyle(
+                      color: AppColors.textFaintLight,
+                      fontSize: 12,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 16),

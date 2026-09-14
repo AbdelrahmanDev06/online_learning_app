@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
+import '../core/theme/app_colors.dart';
 
 class OtpCodeBoxes extends StatelessWidget {
   final String code;
   final int length;
 
-  const OtpCodeBoxes({
-    super.key,
-    required this.code,
-    this.length = 4,
-  });
+  const OtpCodeBoxes({super.key, required this.code, this.length = 4});
 
   @override
   Widget build(BuildContext context) {
@@ -24,16 +21,16 @@ class OtpCodeBoxes extends StatelessWidget {
           margin: const EdgeInsets.symmetric(horizontal: 6),
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.06),
+            color: AppColors.inputFill,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: isFilled ? const Color(0xFF3B6FF6) : Colors.white12,
+              color: isFilled ? AppColors.secondary : AppColors.dividerFaint,
             ),
           ),
           child: Text(
             digit,
             style: const TextStyle(
-              color: Colors.white,
+              color: AppColors.textPrimaryLight,
               fontSize: 22,
               fontWeight: FontWeight.bold,
             ),

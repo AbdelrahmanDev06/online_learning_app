@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../core/theme/app_colors.dart';
 import '../../widgets/onboarding_page_data.dart';
 import '../../widgets/onboarding_page_view.dart';
 import '../../widgets/page_indicator_dots.dart';
@@ -25,18 +26,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   static const _pages = [
     OnboardingPageData(
-      illustrationAsset: 'assets\images\1.png',
+      illustrationAsset: 'assets/images/onboarding_1.png',
       title: 'Numerous free\ntrial courses',
       subtitle: 'Free courses for you to\nfind your way to learning',
     ),
     OnboardingPageData(
-      illustrationAsset: 'assets/images/2.png',
+      illustrationAsset: 'assets/images/onboarding_2.png',
       title: 'Quick and easy\nlearning',
       subtitle:
           'Easy and fast learning at\nany time to help you\nimprove various skills',
     ),
     OnboardingPageData(
-      illustrationAsset: 'assets/images/3.png',
+      illustrationAsset: 'assets/images/onboarding_3.png',
       title: 'Create your own\nstudy plan',
       subtitle:
           'Study according to the\nstudy plan, make study\nmore motivated',
@@ -65,7 +66,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1B33),
+      backgroundColor: AppColors.primary,
       body: SafeArea(
         child: Column(
           children: [
@@ -85,7 +86,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     onPressed: widget.onFinished,
                     child: const Text(
                       'Skip',
-                      style: TextStyle(color: Colors.white54, fontSize: 14),
+                      style: TextStyle(
+                        color: AppColors.textMutedLight,
+                        fontSize: 14,
+                      ),
                     ),
                   ),
                 ),
@@ -124,7 +128,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       child: ElevatedButton(
         onPressed: _goToNextPage,
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.deepPurpleAccent,
+          backgroundColor: AppColors.accent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(14),
           ),
@@ -143,7 +147,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: ElevatedButton(
               onPressed: widget.onSignUp ?? widget.onFinished,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepPurpleAccent,
+                backgroundColor: AppColors.accent,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14),
                 ),
@@ -159,14 +163,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: OutlinedButton(
               onPressed: widget.onLogIn ?? widget.onFinished,
               style: OutlinedButton.styleFrom(
-                side: const BorderSide(color: Colors.white24),
+                side: const BorderSide(color: AppColors.dividerLight),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14),
                 ),
               ),
               child: const Text(
                 'Log in',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: AppColors.textPrimaryLight),
               ),
             ),
           ),

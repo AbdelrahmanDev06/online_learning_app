@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../core/theme/app_colors.dart';
 
 class PhoneNumberField extends StatelessWidget {
   final String countryCode;
@@ -20,12 +21,15 @@ class PhoneNumberField extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.06),
+              color: AppColors.inputFill,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
               '$countryCode $phoneNumber',
-              style: const TextStyle(color: Colors.white, fontSize: 15),
+              style: const TextStyle(
+                color: AppColors.textPrimaryLight,
+                fontSize: 15,
+              ),
             ),
           ),
         ),
@@ -33,7 +37,7 @@ class PhoneNumberField extends StatelessWidget {
         ElevatedButton(
           onPressed: onContinueTap,
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF3B6FF6),
+            backgroundColor: AppColors.secondary,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
